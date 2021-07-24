@@ -9,6 +9,8 @@ Examples and applied such attacks can be found in ASSET: https://github.com/SWNR
 Dont forget to cite:
 George Violettas, George Simoglou, Sophia Petridou, Lefteris Mamatas, A Softwarized Intrusion Detection System for the RPL-based Internet of Things networks, Future Generation Computer Systems, Volume 125, 2021, Pages 698-714, ISSN 0167-739X, https://doi.org/10.1016/j.future.2021.07.013.
 
+All my alterations in the code have "// George" NOT Oikonomou
+
 /*********** George DODAG inconsistency ***************************/        
           
 Changes are in file core/net/rpl/rpl-ext-header.c
