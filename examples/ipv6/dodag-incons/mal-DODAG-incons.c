@@ -187,7 +187,7 @@ print_local_addresses(void)
   int i;
   uint8_t state;
 
-  printf("MALICIOUS Node: IMPLEMENTING DODAG INCOSNISTENCY ATTACK\n");
+  printf("MALICIOUS Node: IMPLEMENTING DODAG INCONSISTENCY ATTACK\n");
 
   printf("Node's IPv6 addresses: \n");
   for(i = 0; i < UIP_DS6_ADDR_NB; i++) {
@@ -314,7 +314,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
 	PRINTF("UDP client process started nbr:%d routes:%d\n",
 		   NBR_TABLE_CONF_MAX_NEIGHBORS, UIP_CONF_MAX_ROUTES);
 
-	print_local_addresses();
+ 	//print_local_addresses(); /* printing the address AFTER the counter has started */
 
 	/* new connection with remote host */
 	client_conn = udp_new(NULL, UIP_HTONS(UDP_SERVER_PORT), NULL); 
@@ -367,6 +367,11 @@ PROCESS_THREAD(udp_client_process, ev, data)
 		if(etimer_expired(&periodic)) {
 			etimer_reset(&periodic);
 			ctimer_set(&backoff_timer, SEND_TIME, send_packet, NULL); 
+			
+			if(counter==1){/* print node's OWN IP after the counter */				
+				print_local_addresses():
+			}
+			
 			counter++;	 
 			 
 /* It is fair for the attacker to declare the send/received icmp, correct? */
