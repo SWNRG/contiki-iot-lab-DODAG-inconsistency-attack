@@ -369,7 +369,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
 			ctimer_set(&backoff_timer, SEND_TIME, send_packet, NULL); 
 			
 			if(counter==1){/* print node's OWN IP after the counter */				
-				print_local_addresses():
+				print_local_addresses();
 			}
 			
 			counter++;	 
